@@ -12,6 +12,10 @@ rickAndMortyForm.addEventListener("submit", (event) => {
     fetch(`https://rickandmortyapi.com/api/character`)
     .then(resp => resp.json())
     .then(characters => {
+        if (characters.results.length > 0) {
+            const character = characters.results[0];
+            console.log("character", character)
+        }
      
      
 
