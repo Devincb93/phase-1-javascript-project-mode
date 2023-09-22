@@ -6,8 +6,8 @@ const rickAndMortySubmit = document.querySelector("input[type=text]");
 rickAndMortyForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const submitEvent = event.target.querySelector("input[type=submit]");
-    const inputValue = submitEvent
+    const inputEvent = event.target.querySelector("input[type=text]");
+    const inputValue = inputEvent
     console.log("inputValue", inputValue)
     fetch(`https://rickandmortyapi.com/api/character`)
     .then(resp => resp.json())
@@ -18,12 +18,12 @@ rickAndMortyForm.addEventListener("submit", (event) => {
 
             const rickContainer = document.createElement("div");
             const characterName = document.createElement("h4")
-            characterName.innerHTML = characters.results.name
+            characterName.innerHTML = characters.results[0].name
             rickContainer.appendChild(characterName)
             
             console.log(rickContainer)
            
-
+document.body.appendChild(rickContainer)
         }
      
      
