@@ -15,12 +15,30 @@ rickAndMortyForm.addEventListener("submit", (event) => {
         if (characters.results.length > 0) {
             const character = characters.results[0];
             console.log("character", character)
-
+            // Variables for each element in html that needs to be
+            // for the information to be displayed on the screen.
             const rickContainer = document.createElement("div");
-            const characterName = document.createElement("h4")
+            const characterName = document.createElement("h4");
+            const characterStatus = document.createElement("li");
+            const characterSpecies = document.createElement("li");
+            const characterImage = document.createElement("img");
+            const characterGender = document.createElement("li");
+            const characterLocation = document.createElement("li");
+            // Assigns each variables inner elements to the results of the api
+            characterLocation.innerHTML = characters.results[0].location
+            characterGender.innerHTML = characters.results[0].gender
+            characterImage.src = characters.results[0].image
+            characterSpecies.innerHTML = characters.results[0].species
+            characterStatus.innerHTML = characters.results[0].status
             characterName.innerHTML = characters.results[0].name
+            // Appends the results to the container that holds the information.
             rickContainer.appendChild(characterName)
-            
+            rickContainer.appendChild(characterStatus)
+            rickContainer.appendChild(characterSpecies)
+            rickContainer.appendChild(characterGender)
+            rickContainer.appendChild(characterLocation)
+
+            rickContainer.appendChild(characterImage)
             console.log(rickContainer)
            
 document.body.appendChild(rickContainer)
