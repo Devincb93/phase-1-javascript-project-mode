@@ -1,13 +1,19 @@
 const submitButton = document.querySelector("input[type=submit]");
 const rickAndMortyForm = document.getElementById("rickAndMortyForm");
 const rickAndMortyInput = document.querySelector("input[type=text]");
-
+const clearButtonAssign = document.getElementById("clear");
 
 rickAndMortyForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    
     const inputEvent = rickAndMortyInput.value;
     const inputValue = inputEvent
+
+    if (inputValue === "") {
+        alert("Please enter a character name to continue!")
+        return;
+    }
     console.log("inputValue", inputValue)
     fetch(`https://rickandmortyapi.com/api/character/?name=${inputValue}`)
     .then(resp => resp.json())
@@ -42,6 +48,7 @@ rickAndMortyForm.addEventListener("submit", (event) => {
            
         document.body.appendChild(rickContainer)
         }
+    
      
      
 
