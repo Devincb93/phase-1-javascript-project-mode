@@ -1,7 +1,7 @@
 const submitButton = document.querySelector("input[type=submit]");
 const rickAndMortyForm = document.getElementById("rickAndMortyForm");
 const rickAndMortyInput = document.querySelector("input[type=text]");
-const clearButtonAssign = document.getElementById("clear");
+const clearButton = document.getElementById("clear");
 
 rickAndMortyForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -24,6 +24,7 @@ rickAndMortyForm.addEventListener("submit", (event) => {
             // Variables for each element in html that needs to be
             // for the information to be displayed on the screen.
             const rickContainer = document.createElement("div");
+            rickContainer.id = "rickContainer";
             const characterName = document.createElement("h4");
             const characterStatus = document.createElement("li");
             const characterSpecies = document.createElement("li");
@@ -48,13 +49,10 @@ rickAndMortyForm.addEventListener("submit", (event) => {
            
         document.body.appendChild(rickContainer)
         }
-    
-     
-     
-
-})
-    
-    const input = event.target.querySelector("input[type=text]");
-    const userInput = input.value;
-    console.log(userInput)
-})
+});     
+});
+clearButton.addEventListener("click", () => {
+    if (rickContainer) {
+        rickContainer.remove(); 
+    }
+});
