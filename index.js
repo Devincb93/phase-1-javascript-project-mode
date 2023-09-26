@@ -21,7 +21,9 @@ rickAndMortyForm.addEventListener("submit", (event) => {
         if (characters.results.length > 0) {
             const character = characters.results[0];
             console.log("character", character)
-            // Variables for each element in html that needs to be
+           
+           
+             // Variables for each element in html that needs to be
             // for the information to be displayed on the screen.
             const rickContainer = document.createElement("div");
             rickContainer.id = "rickContainer";
@@ -31,6 +33,7 @@ rickAndMortyForm.addEventListener("submit", (event) => {
             const characterImage = document.createElement("img");
             const characterGender = document.createElement("li");
             const characterLocation = document.createElement("li");
+           
             // Assigns each variables inner elements to the results of the api
             characterLocation.innerHTML = character.location
             characterGender.innerHTML = character.gender
@@ -45,6 +48,7 @@ rickAndMortyForm.addEventListener("submit", (event) => {
             rickContainer.appendChild(characterGender)
             rickContainer.appendChild(characterLocation)
             rickContainer.appendChild(characterImage)
+            
             console.log(rickContainer)
            
         document.body.appendChild(rickContainer)
