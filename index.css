@@ -1,18 +1,22 @@
 .image-container {
-    border: 1px solid #DDDDDD;
+    border: 1px solid #1f1515;
     width: 200px;
     height: 200px;
     position: relative;
  }
  .overlay-text {
     float: center;
-    position: float;
-    left: 0px;
-    top: 0px;
-    z-index: 1000;
-    background-color: #92AD40;
-    background-visibility: hidden
-    padding: 5px;
-    color: #FFFFFF;
+    position: absolute;
+    bottom: 2;
+    background: rgb(126, 69, 69);
+    background: rgba(0, 0, 0, 0);
+    
+    
+    
+    
+    
+    padding: 0px;
+    color: #110d0d;
     font-weight: bold;
+    font-size: xx-large;
  }
