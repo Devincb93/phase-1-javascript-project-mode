@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id = "image-container">
-      <div class="overlay-text">Rick and Morty Super Search</div>
+      <div class="overlay"></div>
       <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2019%2F11%2Frick-and-morty-season-4-2000.jpg&q=60" 
       alt="search-header"
       />
@@ -18,11 +18,12 @@
        <h2>Rick and Morty Super Search</h2> 
 
        <form id="rickAndMortyForm">
-        <input id="search" type="text" name="search">
-        <input type="submit" name="submit"/>
-        <input  id="clear" type="button" value="Clear" name="clearbut">
-        
-
+        <div class="search-form"> 
+          <input id="search" type="text" name="search">
+          <input type="submit" name="submit"/>
+          <input  id="clear" type="button" value="Clear" name="clearbut">
+        </div>
+      
         
       </form>
       
