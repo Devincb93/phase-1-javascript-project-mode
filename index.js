@@ -3,7 +3,7 @@ const rickAndMortyForm = document.getElementById("rickAndMortyForm");
 const rickAndMortyInput = document.querySelector("input[type=text]");
 const clearButton = document.getElementById("clear");
 const rickContainerShort = document.getElementById("rick-container")
-let rickContainer = null;
+
 rickAndMortyForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -15,15 +15,21 @@ rickAndMortyForm.addEventListener("submit", (event) => {
         alert("Please enter a character name to continue!")
         return;
     }
+    while (rickContainerShort.firstChild) {
+        rickContainerShort.removeChild(rickContainerShort.firstChild);
+    }
     console.log("inputValue", inputValue)
     fetch(`https://rickandmortyapi.com/api/character/?name=${inputValue}`)
     .then(resp => resp.json())
     .then(data => {
         const characters = data.results;
             if (characters.length >0) {
-                rickContainerShort.remove(.3);
+               
                     console.log(rickContainerShort)
                 characters.forEach(character => {
+                    // const characterContainer = document.createElement("div");
+                    // characterContainer.className = "rick-container";
+                    
                     const characterName = document.createElement("h4");
                     characterName.textContent = character.name;
 
@@ -38,20 +44,21 @@ rickAndMortyForm.addEventListener("submit", (event) => {
 
                     const characterImage = document.createElement("img")
                     characterImage.src = character.image;
+                    characterImage.className = "character-images";
+                    
 
-                    const characterContainer = document.createElement("div");
-                    characterContainer.className = "rick-container";
-
+                    
                     rickContainerShort.appendChild(characterName);
                     rickContainerShort.appendChild(characterStatus);
                     rickContainerShort.appendChild(characterSpecies);
                     rickContainerShort.appendChild(characterGender);
                     rickContainerShort.appendChild(characterImage);
-                    rickContainerShort.appendChild(characterContainer);
-
+                    // rickContainerShort.appendChild(characterContainer);
+                    document.body.appendChild(rickContainerShort)
                 });
             } else {
                 alert("No characters found. Try again.")
+
             }
         
 //         if (characters.results.length > 0) {
@@ -92,9 +99,9 @@ rickAndMortyForm.addEventListener("submit", (event) => {
 });     
 });
 clearButton.addEventListener("click", () => {
-    if (rickContainer) {
-        rickContainer.remove();
-        inputValue.value = ""
+    if (rickContainerShort) {
+        rickContainerShort.remove();
+        
         document.grabElementbyId("rick-container").remove(); 
     }
 });
