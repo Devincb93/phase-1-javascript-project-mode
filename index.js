@@ -27,8 +27,7 @@ rickAndMortyForm.addEventListener("submit", (event) => {
                
                     console.log(rickContainerShort)
                 characters.forEach(character => {
-                    // const characterContainer = document.createElement("div");
-                    // characterContainer.className = "rick-container";
+                    const characterContainer = document.createElement("div")
                     
                     const characterName = document.createElement("h4");
                     characterName.textContent = character.name;
@@ -45,63 +44,37 @@ rickAndMortyForm.addEventListener("submit", (event) => {
                     const characterImage = document.createElement("img")
                     characterImage.src = character.image;
                     characterImage.className = "character-images";
+
+                    const characterClear = document.createElement("button")
+                    characterClear.textContent = "X";
+                    characterClear.addEventListener("click",() => {
+                        rickContainerShort.removeChild(characterContainer)
+                    })
                     
 
                     
-                    rickContainerShort.appendChild(characterName);
-                    rickContainerShort.appendChild(characterStatus);
-                    rickContainerShort.appendChild(characterSpecies);
-                    rickContainerShort.appendChild(characterGender);
-                    rickContainerShort.appendChild(characterImage);
-                    // rickContainerShort.appendChild(characterContainer);
-                    document.body.appendChild(rickContainerShort)
+                    characterContainer.appendChild(characterName);
+                    characterContainer.appendChild(characterStatus);
+                    characterContainer.appendChild(characterSpecies);
+                    characterContainer.appendChild(characterGender);
+                    characterContainer.appendChild(characterImage);
+                    characterContainer.appendChild(characterClear);
+
+                    rickContainerShort.appendChild(characterContainer);
+                    
+
+                    
+                    
                 });
             } else {
                 alert("No characters found. Try again.")
 
             }
-        
-//         if (characters.results.length > 0) {
-//             const character = characters.results[0];
-//             console.log("character", character)
-           
-           
-//              // Variables for each element in html that needs to be
-//             // for the information to be displayed on the screen.
-//             const rickContainer = document.createElement("div");
-//             rickContainer.id = "rickContainer";
-//             const characterName = document.createElement("h4");
-//             const characterStatus = document.createElement("li");
-//             const characterSpecies = document.createElement("li");
-//             const characterImage = document.createElement("img");
-//             const characterGender = document.createElement("li");
-//             const characterLocation = document.createElement("li");
-           
-//             // Assigns each variables inner elements to the results of the api
-//             characterLocation.innerHTML = character.location
-//             characterGender.innerHTML = character.gender
-//             characterImage.src = character.image
-//             characterSpecies.innerHTML = character.species
-//             characterStatus.innerHTML = character.status
-//             characterName.innerHTML = character.name
-//             // Appends the results to the container that holds the information.
-//             rickContainer.appendChild(characterName)
-//             rickContainer.appendChild(characterStatus)
-//             rickContainer.appendChild(characterSpecies)
-//             rickContainer.appendChild(characterGender)
-//             rickContainer.appendChild(characterLocation)
-//             rickContainer.appendChild(characterImage)
-            
-//             console.log(rickContainer)
-           
-//         document.body.appendChild(rickContainer)
-//         }
 });     
 });
 clearButton.addEventListener("click", () => {
-    if (rickContainerShort) {
-        rickContainerShort.remove();
-        
-        document.grabElementbyId("rick-container").remove(); 
-    }
+    rickContainerShort.innerHTML = ""
+    // if (rickContainerShort.firstChild) {
+    //     rickContainerShort.clear(rickContainerShort.); 
+    // }
 });

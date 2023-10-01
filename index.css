@@ -7,3 +7,6 @@ img {
    width: 400px;
    height: auto;
 }
+.all-overlay {
+   background-color: rgb(209, 168, 34);
+}
