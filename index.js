@@ -74,7 +74,5 @@ rickAndMortyForm.addEventListener("submit", (event) => {
 });
 clearButton.addEventListener("click", () => {
     rickContainerShort.innerHTML = ""
-    // if (rickContainerShort.firstChild) {
-    //     rickContainerShort.clear(rickContainerShort.); 
-    // }
+   
 });

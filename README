@@ -1,3 +1,14 @@
+What is Rick and Morty Super Search?
+Rick and Morty Super Search takes in a users given api, in this case it is. "https://rickandmortyapi.com/api". Once the search takes in a user input such as "Rick" or "Ric", it will populate all characters with matching results to the user input eg. "Rick Sanchez" "Alien Rick" "Robot Rick" and so on. The super search also allows you to clear your search completely, or if you want to narrow your search down to a specific character but don't exactly know which one it is, you can use the x button created by the character images to remove them from the results that you currently have. 
+
+What if the user doesn't input any text into the field?
+If the user doesn't input any text in to the field the web app will ping and alert back to the user to enter a valid character name to search to prompt the user.
+
+What if the user's input doesn't match any characters?
+If the user's input doesn't match any characters that are in the the api. Then then web app will alert that no characters were found and to try again.
+
+
+
 Sources:
 
 Rick and Morty search header image -
